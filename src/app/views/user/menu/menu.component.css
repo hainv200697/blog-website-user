@@ -1,0 +1,11 @@
+#menu-left {
+    top: 120px;
+    left: 5px;
+    position: fixed;
+    width: 20%;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}

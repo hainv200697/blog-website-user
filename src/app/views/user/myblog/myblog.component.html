@@ -1,0 +1,31 @@
+<app-nav></app-nav>
+<app-menu></app-menu>
+<div class="col-md-6 div-content">
+  <h2> Danh sách danh mục</h2>
+  <!-- <div class="topnav" style="margin-top: 10px">
+    <div class="search-container">
+      <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+        <div class="form-group">
+          <input formControlName="searchValue" name="searchValue" id="searchValue">
+          <button>Search</button>
+        </div>
+      </form>
+    </div>
+  </div> -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <div class="paging">
+    <a class="prenext round" (click)="changePage(-1)">&#8249;</a>{{page}} / {{totalPage}}<a
+      class="prenext round" (click)="changePage(1)">&#8250;</a>
+  </div>
+</div>

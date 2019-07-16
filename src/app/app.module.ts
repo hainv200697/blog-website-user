@@ -10,6 +10,10 @@ import { NavComponent } from './views/nav/nav.component';
 import { LoginComponent } from './views/login/login.component';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider } from "angularx-social-login";
+import { CreateBlogComponent } from './views/user/create-blog/create-blog.component';
+import { MenuComponent } from './views/user/menu/menu.component';
+import { MyblogComponent } from './views/user/myblog/myblog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 let config = new AuthServiceConfig([
   {
@@ -27,14 +31,18 @@ export function provideConfig() {
     AppComponent,
     HomeComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    CreateBlogComponent,
+    MenuComponent,
+    MyblogComponent
   ],
   imports: [
     BrowserModule,
     AppBootstrapModule,
     AngularFontAwesomeModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    HttpClientModule
   ],
   providers: [
     {

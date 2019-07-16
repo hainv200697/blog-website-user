@@ -13,16 +13,17 @@ export class NavComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      if (user != null) {
-        this.name = user.name
-      }
-    });
+    this.name = sessionStorage.getItem("name");
   }
 
   logout() {
+    sessionStorage.removeItem("name");
     this.authService.signOut()
     this.name = null
     this.router.navigate(['/'])
+  }
+
+  goUser() {
+    this.router.navigate(['/user'])
   }
 }
