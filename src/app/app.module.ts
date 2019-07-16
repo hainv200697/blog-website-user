@@ -14,6 +14,7 @@ import { CreateBlogComponent } from './views/user/create-blog/create-blog.compon
 import { MenuComponent } from './views/user/menu/menu.component';
 import { MyblogComponent } from './views/user/myblog/myblog.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailComponent } from './views/detail/detail.component';
 
 let config = new AuthServiceConfig([
   {
@@ -34,7 +35,8 @@ export function provideConfig() {
     LoginComponent,
     CreateBlogComponent,
     MenuComponent,
-    MyblogComponent
+    MyblogComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

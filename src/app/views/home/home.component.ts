@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-
+  isLogin = true;
   ngOnInit() {
+    var user = sessionStorage.getItem("name");
+    if (user == null) {
+      this.isLogin = false;
+    }
   }
 
 }
