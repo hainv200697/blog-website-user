@@ -21,6 +21,7 @@
                         <div class="nav-collapse">
                             <ul class="nav" id="topMenu" data-submenu="horizontal">
                                 <li class="active">
+                                    <a href="/">Home</a>
                                     <a href="/user" *ngIf="isLogin">My Blog</a>
                                     <a href="/login" *ngIf="!isLogin">Login</a>
                                 </li>
@@ -43,85 +44,76 @@
                         <div class="heading">
                             <h1 class="page-title">My Blog</h1>
                         </div>
-
-                        <div class="content">
-                            <div class="section">
+                        <div class="content" *ngFor="let post of posts">
+                            <div class="section" *ngIf="post.type == 'BLOG'" (click)="viewDetail(post.id)">
                                 <div class="content">
                                     <div class="avatar">
                                         <i class="fa fa-pencil" title="Essential skills for a happy life!" style="font-size: 40px"></i>
                                     </div>
                                     <div class="item">
                                         <div class="controls">
-                                            <span class="date-text">16-11-2015</span>
+                                            <span class="date-text">{{post.createdDate}}</span>
                                         </div>
                                         <div class="heading">
-                                            <h4>Essential skills for a happy life!</h4>
+                                            <h4>{{post.title}}</h4>
                                         </div>
 
                                         <div class="content">
                                             <div class="img-simple span6 pull-left">
                                                 <div class="image">
-                                                    <img src="/assets/tmp1.jpg">
+                                                    <img src="{{post.image}}">
                                                 </div>
                                             </div>
-
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-                                                suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                                            <p>At eam doctus oportere, eam feugait delectus ne. Quo cu vulputate persecuti. Eum ut natum possim comprehensam, habeo dicta scaevola eu nec. Ea adhuc reformidans eam. Pri dolore epicuri eu, ne cum tantas fierent
-                                                instructior. Pro ridens intellegam ut, sea at graecis scriptorem eloquentiam.</p>
-                                            <p>Per an labitur lucilius ullamcorper, esse erat ponderum ad vim. Possim laoreet suscipit ex pri, vix numquam eruditi feugait in. Nec maluisset complectitur te, at sea decore semper. Falli numquam perpetua sea
-                                                et, tibique repudiandae an pro. Ut his solum persius postulant. Soluta nemore debitis ne eos, cum an scripta pericula partiendo.</p>
-                                            <span>Nguyen Van Hai</span>
+                                            <p>{{post.content}}</p>
+                                            <span>{{post.user.fullName}}</span>
                                         </div>
 
 
                                     </div>
                                 </div>
                             </div>
-                            <div class="section">
+                            <div class="section" *ngIf="post.type == 'SLOGAN'" (click)="viewDetail(post.id)">
                                 <div class="content">
                                     <div class="avatar">
                                         <i class="fa fa-quote-left" title="You&#39;ve gotta dance" style="font-size: 40px"></i>
                                     </div>
                                     <div class="item">
                                         <div class="controls">
-                                            <span class="date-text">16-11-2015</span>
+                                            <span class="date-text">{{post.createdDate}}</span>
                                         </div>
                                         <div class="heading">
-                                            <h4>You've gotta dance</h4>
+                                            <h4>{{post.title}}</h4>
                                         </div>
                                         <div class="content">
                                             <blockquote class="pull-right">
-                                                <p>“You've gotta dance like there's nobody watching,Love like you'll never be hurt,Sing like there's nobody listening, And live like it's heaven on earth.”</p>
-                                                <small>William W. Purkey</small>
+                                                <p>“{{post.content}}”</p>
+                                                <small>{{post.source}}</small>
                                             </blockquote>
-                                            <span>Nguyen Van Hai</span>
+                                            <span>{{post.user.fullName}}</span>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
-                            <div class="section">
+                            <div class="section" *ngIf="post.type == 'PHOTO'" (click)="viewDetail(post.id)">
                                 <div class="content">
                                     <div class="avatar">
                                         <i class="fa fa-camera-retro" title="Photo" style="font-size: 40px"></i>
                                     </div>
                                     <div class="item">
                                         <div class="controls">
-                                            <span class="date-text">16-11-2015</span>
+                                            <span class="date-text">{{post.createdDate}}</span>
                                         </div>
                                         <div class="heading">
-                                            <h4>Photo</h4>
+                                            <h4>{{post.title}}</h4>
                                         </div>
 
                                         <div class="content">
                                             <div class="img-simple  ">
                                                 <div class="image">
-                                                    <img src="/assets/tmp1.jpg">
+                                                    <img src="{{post.image}}">
                                                 </div>
                                             </div>
-                                            <span>Nguyen Van Hai</span>
+                                            <span>{{post.user.fullName}}</span>
                                         </div>
 
 

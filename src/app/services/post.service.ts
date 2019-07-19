@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
-import { User } from '../models/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import config from '../config.json';
+import { Post } from '../models/post.js';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class PostService {
 
   constructor(private http: HttpClient) { }
-  baseUrl: string = '/external/register';
+  baseUrl: string = '/post';
 
-  post(info) {
-    return this.http.post(config.server + this.baseUrl, info, { headers: this.getArgHeaders() });
+  getTop3() {
+    return this.http.get<Post[]>(`${config.server}${this.baseUrl}/top3`);
+  }
+
+  getById(id) {
+    return this.http.get<Post>(`${config.server}${this.baseUrl}/${id}`);
   }
 
   private getArgHeaders(): HttpHeaders {

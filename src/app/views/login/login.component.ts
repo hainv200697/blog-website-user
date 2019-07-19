@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
       if (user != null) {
+        sessionStorage.setItem("name", user.name);
         this.router.navigate(['/'])
       }
     });
@@ -28,7 +29,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginSuccess(email, fullName): void {
-    sessionStorage.setItem("name", fullName);
     this.user.post({ email, fullName })
       .subscribe((data) => {
         sessionStorage.setItem("name", fullName);
