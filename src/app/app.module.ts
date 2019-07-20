@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import * as $ from 'jquery';
 
 import { AppComponent } from './app.component';
 import { AppBootstrapModule } from './app-bootstrap.module';
@@ -15,6 +16,7 @@ import { MenuComponent } from './views/user/menu/menu.component';
 import { MyblogComponent } from './views/user/myblog/myblog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailComponent } from './views/detail/detail.component';
+import { NewComponent } from './views/new/new.component';
 
 let config = new AuthServiceConfig([
   {
@@ -36,7 +38,8 @@ export function provideConfig() {
     CreateBlogComponent,
     MenuComponent,
     MyblogComponent,
-    DetailComponent
+    DetailComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,

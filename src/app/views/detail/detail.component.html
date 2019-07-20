@@ -21,9 +21,10 @@
                         <div class="nav-collapse">
                             <ul class="nav" id="topMenu" data-submenu="horizontal">
                                 <li class="active">
-                                    <a href="/">Home</a>
-                                    <a href="/user" *ngIf="isLogin">My Blog</a>
-                                    <a href="/login" *ngIf="!isLogin">Login</a>
+                                    <a href="/">Home | </a>
+                                    <a href="/myblog" *ngIf="isLogin">My Blog | </a>
+                                    <a href="/login" *ngIf="!isLogin">Login | </a>
+                                    <a href="/new">News</a>
                                 </li>
                             </ul>
                         </div>

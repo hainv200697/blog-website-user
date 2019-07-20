@@ -4,27 +4,42 @@ import { Post } from 'src/app/models/post';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-new',
+  templateUrl: './new.component.html',
+  styleUrls: ['./new.component.css']
 })
-export class HomeComponent implements OnInit {
+export class NewComponent implements OnInit {
 
   constructor(private router: Router, private postService: PostService) { }
   isLogin = true;
   posts: Post[];
+  page = 0;
   ngOnInit() {
     var user = sessionStorage.getItem("name");
     if (user == null) {
       this.isLogin = false;
     }
-    this.postService.getTop3()
+    this.page = 0;
+    this.getListPost(0);
+  }
+
+  getListPost(page) {
+    this.postService.getPost(page)
       .subscribe(res => {
+        if (res.length == 0) {
+          alert("End of news!")
+          return;
+        }
+        this.page = page;
         this.posts = res;
         this.posts.forEach(post => {
           post.createdDate = post.createdDate.split('T')[0];
         });
       })
+  }
+
+  seeMore() {
+    this.getListPost(this.page + 1);
   }
 
   viewDetail(id) {

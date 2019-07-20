@@ -1,0 +1,74 @@
+.content {
+    margin-top: 8.5%;
+    margin-right: 10%;
+    margin-left: 15%;
+    z-index: 1;
+    position: absolute;
+}
+
+.select {
+    width: 35%;
+}
+
+
+/* custom css form */
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+label {
+    color: #333;
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 20px;
+    margin-left: 0px;
+}
+
+.content-area {
+    height: 500px;
+}
+
+
+/* Upload Loading */
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid black;
+    border-bottom: 16px solid black;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    z-index: 2;
+    margin-left: 45%;
+    margin-top: 300px;
+    position: absolute;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

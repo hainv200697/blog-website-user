@@ -22,10 +22,10 @@ export class MenuComponent implements OnInit {
   routerUser(index) {
     switch (index) {
       case 1:
-        this.router.navigate(['/user/create'])
+        this.router.navigate(['/user/createBlog'])
         break
       case 2:
-        this.router.navigate(['/user/myblog'])
+        this.router.navigate(['/myblog'])
         break
     }
   }

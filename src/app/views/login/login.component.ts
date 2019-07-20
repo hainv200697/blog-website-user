@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
     this.authService.authState.subscribe((user) => {
       if (user != null) {
         sessionStorage.setItem("name", user.name);
+        sessionStorage.setItem("email", user.email);
         this.router.navigate(['/'])
       }
     });
@@ -32,10 +33,12 @@ export class LoginComponent implements OnInit {
     this.user.post({ email, fullName })
       .subscribe((data) => {
         sessionStorage.setItem("name", fullName);
+        sessionStorage.setItem("email", email);
         this.router.navigate(['/'])
       },
         (error) => {
           sessionStorage.removeItem("name");
+          sessionStorage.removeItem("email");
           this.authService.signOut();
           alert("Email is banned")
           this.router.navigate(['/'])

@@ -1,0 +1,45 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-xl-8 offset-xl-2 py-5 content">
+            <form>
+
+                <div class="messages"></div>
+
+                <div class="controls">
+                    <div class="row">
+                        <div class="col-md-5" id="div-title">
+                            <div class="form-group">
+                                <label for="title">Title *</label>
+                                <input id="title" type="text" name="title" class="form-control"
+                                    placeholder="Please enter your title *" data-error="Valid title is required.">
+
+                            </div>
+                        </div>
+                        <div class="col-md-5" id="div-source">
+                            <div class="form-group">
+                                <label for="source">Source</label>
+                                <input id="source" type="text" name="source" class="form-control"
+                                    placeholder="Please enter source" required="required"
+                                    data-error="Firstname is required.">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10" id="div-content">
+                            <div class="form-group">
+                                <label for="content">Content *</label>
+                                <textarea id="content" name="content" class="form-control" style="height: 400px;"
+                                    placeholder="Content of you *" rows="4" required="required"
+                                    data-error="Please, leave us a message."></textarea>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
